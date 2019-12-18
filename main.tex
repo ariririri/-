@@ -245,15 +245,14 @@ $P_+(I) \subset M_{+}(I) \subset P(I)$が部分多様体となっている.
 上で定義した多様体の接バンドルと余接バンドルを求める.
 $S(I)$はベクトル空間なので,$\mu \in S(I)$での$S(I)$上の接ベクトル空間$T_{\mu}S(I)$は$S(I)$と同型となる.
 またその余接ベクトル空間$T_{\mu}^*S(I)$は$S(I)$の双対と同型となる.
-
 $S(I)$の開部分多様体$M_{+}(I)$に対しては接ベクトル空間、余接ベクトル空間は変わらない.
 $P_+(I)$について求める.
-
 $n-1$次元閉部分多様体の場合は$S_0(I)$と同型の接ベクトル空間になる.
 
 \subsection{Fisher Metric}
-$F(I),S(I)$上に双線形形式を定める.
-$f,g \in F(I)$に対し.$\langle f, g \rangle_{\mu} = \mu(f \cdot g) = \sum \mu_i f_i g_i$とすると,これは双線形形式になる
+$\mu \in M_{+}(I)$の時に,$F(I),S(I)$上に双線形形式を定める.
+$f,g \in F(I)$に対し,$f= \sum f_ie_i, g= \sum g_ie_i $と表す.
+双線型形式$\langle\cdot, \cdot \rangle_{\mu}: F(I) \times F(I) \to \mathbb{R}$を$\langle f, g \rangle_{\mu} = \mu(f \cdot g) = \sum \mu_i f_i g_i$とすると,双線形形式になる.
 これから$\mathcal{F}(I) \to S(I), f \mapsto \langle f, \cdot \rangle_{\mu}$も誘導される.
 その逆写像$\tilde{\phi}: S(I) \to F(I)$を
 逆にRadon
@@ -296,5 +295,38 @@ $$
 \end{aligned}
 $$
 
+\subsection{The m- and e- Connections}
+この章では$M$で$M_+(I)$を表す.
+
+\subsubsection{Connection}
+\begin{screen}
+\begin{dfn}
+$M$を$C^{\infty}$多様体,$E$を$M$上のVector Bunldeとし,その切断を$\Gamma(TM), \Gamma(E)$と表す.
+この時、$\nabla$が$E$上の\textbf{Connection}とは,$\nabla: \Gamma(TM) \times \Gamma(E) \to \Gamma(E)$であって,
+$\nabla(X, S)$を$\nabla_XS$と表した時に、以下を満たすものである.
+
+\begin{itemize}
+ \item $X$につてい$C^{\infty}$-linear
+ \item $S$につていlinear
+ \item $\nabla_X(fS) = X(f)S + f\nabla_XS$
+\end{itemize}
+\end{dfn}
+\end{screen}
+
+\begin{prop}
+$\nabla$を$E$上のconnection,$p \in M, X_1,X_2 \in \Gamma(TM), Y \in \Gamma(E)$とした時,
+$X_1(p) = X_2(p)$ならば$\nabla_{X_1}Y(p) = \nabla_{X_2}Y(p)$となる.
+\end{prop}
+\begin{proof}
+$\nabla_{X_1}Y - \nabla_{X_2}Y(p) = \nabla_{X_1 - X_2}Y(p)$となり,$f$を適当な開近傍$U$の外では1で$f(p)=1$となる関数とする.
+この時$f(X_1 - X_2) = X_1 - X_2$となる.
+よって$\nabla_{f(X_1 - X_2)}Y(p) = f(p)\nabla_{X_1 - X_2}Y(p) = 0$となるので、局所的に一致するすることが言える.
+\end{proof}
+
+\begin{prop}
+$M$を$C^{\infty}$多様体とする,$M$上の自明束$E$に対し、自明化$\phi:M \times \mathbb{R}^k \to E$をひとつ固定する.
+今$S_i := \phi(-, e_i)$とする.この時,$E$上のconnection $\nabla$は
+$\{ \nabla_{ }S_I: \Gamma(TM) \to \Gamma(E) \}_{i=1}^k$と$C^{\infty}$-linear性から唯一に定まる.
+\end{prop}
 
 \end{document}https://www.overleaf.com/project/5d46be799950521c16baae6c
